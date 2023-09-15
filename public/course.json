@@ -35,7 +35,7 @@
         "id": 5,
         "course_img": "https://i.ibb.co/wMPL2PC/Rectangle-2.png",
         "title": "Introduction to OOP Python",
-        "description": "Introduce yourself to the world of object-oriented programming in Python. Cover classes, inheritance, and polymorphism.",
+        "description": "Introduce yourself to the world of object-oriented programming in Python.Also Cover classes, and inheritance, and polymorphism.",
         "price": 99.99,
         "credit": 4
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "course_img": "https://i.ibb.co/SVjQNJF/Rectangle-2-5.png",
         "title": "Software Engineering",
-        "description": "Master the core principles of software engineering, including agile methodologies, system design, and testing strategies.",
+        "description": "Master the core principles of software engineering, including agile methodologies,and system design, and testing strategies.",
         "price": 79.99,
         "credit": 4
     },
