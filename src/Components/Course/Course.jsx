@@ -1,7 +1,7 @@
 
 import PropTypes from 'prop-types'
 
-const Course = ({ course }) => {
+const Course = ({ course, handlebookmarks }) => {
     const { title, description, price, course_img, credit } = course;
     return (
         <div className="space-y-3 bg-white shadow-xl p-4 rounded-xl">
@@ -22,11 +22,12 @@ const Course = ({ course }) => {
                     <p>Credit: {credit}hr</p>
                 </div>
             </div>
-            <button className='w-full bg-blue-500 text-white rounded-xl py-2'>Select</button>
+            <button onClick={() => handlebookmarks(course)} className='w-full bg-blue-500 text-white rounded-xl py-2'>Select</button>
         </div>
     );
 };
 Course.propTypes = {
-    course: PropTypes.object.isRequired
+    course: PropTypes.object.isRequired,
+    handlebookmarks: PropTypes.func
 }
 export default Course;
