@@ -62,7 +62,7 @@ function App() {
       <div className='container mx-auto p-4'>
         <h1 className='text-3xl font-bold text-center'>Course Registration </h1>
 
-        <div className='md:flex gap-10 mt-10'>
+        <div className='flex flex-col flex-col-reverse md:flex-row  gap-10 mt-10'>
           <Courses handlebookmarks={handlebookmarks}></Courses>
           <Bookmarks bookmarks={bookmarks} credithour={credithour} remaininghour={remaininghour}></Bookmarks>
         </div>
