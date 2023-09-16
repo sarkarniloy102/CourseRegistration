@@ -1,4 +1,5 @@
 
+import { PiBookOpen } from 'react-icons/pi';
 import PropTypes from 'prop-types'
 
 const Course = ({ course, handlebookmarks }) => {
@@ -17,7 +18,7 @@ const Course = ({ course, handlebookmarks }) => {
                     <p>$</p>
                     <p>Price: {price}</p>
                 </div>
-
+                <PiBookOpen></PiBookOpen>
                 <div>
                     <p>Credit: {credit}hr</p>
                 </div>

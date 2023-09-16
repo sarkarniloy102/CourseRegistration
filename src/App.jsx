@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Bookmarks from './Components/Bookmarks/Bookmarks'
 import Courses from './Components/Courses/Courses'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [bookmarks, setbookmarks] = useState([]);
@@ -11,18 +13,48 @@ function App() {
   const handlebookmarks = (course, credit) => {
 
     const result = bookmarks.find((element) => element === course);
+
+    const newcredithour = credithour + credit;
+    const newremaininghour = remaininghour - credit;
+
+
+
     if (!result) {
       const newbookmarks = [...bookmarks, course];
-      setbookmarks(newbookmarks)
 
-      setcredithour(credithour + credit);
-      setremaininghour(remaininghour - credit);
+      if (newcredithour <= 20 && newremaininghour >= 0) {
+        setcredithour(newcredithour);
+        setbookmarks(newbookmarks);
+        setremaininghour(newremaininghour);
+      }
+      else {
+        toast.warn('🦄 You can not added more than 20 credits!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        toast.warn('🦄 Your remaining credit hour is less than 0!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+
     }
     else {
       const newbookmarks = [...bookmarks];
       setbookmarks(newbookmarks);
     }
-
 
   }
   return (
@@ -34,7 +66,7 @@ function App() {
           <Courses handlebookmarks={handlebookmarks}></Courses>
           <Bookmarks bookmarks={bookmarks} credithour={credithour} remaininghour={remaininghour}></Bookmarks>
         </div>
-
+        <ToastContainer></ToastContainer>
       </div>
 
 
