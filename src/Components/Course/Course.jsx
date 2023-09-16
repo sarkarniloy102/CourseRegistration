@@ -22,7 +22,7 @@ const Course = ({ course, handlebookmarks }) => {
                     <p>Credit: {credit}hr</p>
                 </div>
             </div>
-            <button onClick={() => handlebookmarks(course)} className='w-full bg-blue-500 text-white rounded-xl py-2'>Select</button>
+            <button onClick={() => handlebookmarks(course, credit)} className='w-full bg-blue-500 text-white rounded-xl py-2'>Select</button>
         </div>
     );
 };
